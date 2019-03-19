@@ -12,8 +12,10 @@ import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
-const appRoutes : Routes = [
+const appRoutes: Routes = [
   {
     path:'notes',
     component:NotesComponent
@@ -32,6 +34,14 @@ const appRoutes : Routes = [
     component:LoginComponent
   },
   {
+    path:'contact',
+    component:ContactPageComponent
+  },
+  {
+    path:'register',
+    component:RegisterComponent
+  },
+  {
     path:'**',
     component:NotFoundComponent
   }
@@ -45,7 +55,9 @@ const appRoutes : Routes = [
     NotesComponent,
     NotFoundComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
