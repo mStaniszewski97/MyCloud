@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { DriveComponent } from './drive/drive.component';
+import { AdminDriveComponent } from './admin-drive/admin-drive.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +34,14 @@ const appRoutes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'drive',
+    component:DriveComponent
+  },
+  {
+    path:'admin-drive',
+    component:AdminDriveComponent
   },
   {
     path:'contact',
@@ -57,7 +67,9 @@ const appRoutes: Routes = [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    DriveComponent,
+    AdminDriveComponent
   ],
   imports: [
     BrowserModule,
