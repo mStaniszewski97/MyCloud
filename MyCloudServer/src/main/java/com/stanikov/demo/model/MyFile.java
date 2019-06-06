@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
-public class File {
+public class MyFile {
 
     @Id
     private UUID id;
@@ -27,9 +27,9 @@ public class File {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    public File(){}
+    public MyFile(){}
 
-    public File(String fileName, String size, User user) {
+    public MyFile(String fileName, String size, User user) {
         this.id = UUID.randomUUID();
         this.fileName = fileName;
         this.size = size;
@@ -40,12 +40,12 @@ public class File {
         this.user = user;
     }
 
-    public File(String fileName, String size, String description, User user) {
+    public MyFile(String fileName, String size, String description, User user) {
         this(fileName, size, user);
         this.description = description;
     }
 
-    public File(String id, String fileName, String size, String description, User user) {
+    public MyFile(String id, String fileName, String size, String description, User user) {
         this(fileName, size, description, user);
         if(id != null){
             this.id = UUID.fromString(id);

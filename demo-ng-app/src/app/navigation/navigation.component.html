@@ -14,14 +14,17 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/feedback">Feedback</a>
       </li> -->
-      <li class="nav-item">
+      <li class="nav-item" id="driveButton" hidden>
         <a class="nav-link" routerLink="/drive">Drive</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact">Contact</a>
       </li>
-      <li class="nav-item">
+      <li id="loginButton" class="nav-item">
         <a class="nav-link btn btn-primary" routerLink="/login"><b>LOGIN</b></a>
+      </li>
+      <li id="logoutButton" class="nav-item" (click)="logout()" hidden>
+        <a class="nav-link btn btn-primary"><b>LOGOUT</b></a>
       </li>
     </ul>
   </div>

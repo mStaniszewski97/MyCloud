@@ -21,7 +21,7 @@ public class User {
     private String password;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<File> files = new ArrayList<>();
+    private List<MyFile> myFiles = new ArrayList<>();
 
     public User() {
     }
@@ -44,8 +44,16 @@ public class User {
         return password;
     }
 
-    public List<File> getFiles() {
-        return files;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<MyFile> getMyFiles() {
+        return myFiles;
+    }
+
+    public void addFile(MyFile myFile){
+        myFiles.add(myFile);
     }
 
 }

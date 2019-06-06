@@ -3,10 +3,10 @@
     <!-- Tabs Titles -->
     <h1>Register</h1>
     <!-- Login Form -->
-    <form action="http://localhost:8082/register" method="POST">
-      <input type="text" id="login" class="fadeIn first" name="login" placeholder="username">
-      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+    <form name="form" #f="ngForm" (ngSubmit)="register()">
+      <input type="text" id="login" class="fadeIn first" name="login" placeholder="username" [(ngModel)]="model.username">
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" [(ngModel)]="model.email">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="model.password">
       <input type="submit" class="fadeIn fourth" value="Sign up">
     </form>
   </div>

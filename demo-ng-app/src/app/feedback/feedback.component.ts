@@ -7,27 +7,28 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-  model:FeedbackViewModel = {
-    name:'',
-    email:'',
-    feedback:''
+  model: FeedbackViewModel = {
+    name: '',
+    email: '',
+    feedback: ''
   };
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
 
   ngOnInit() {
   }
 
-  sendFeedback(): void{
-    let url = "http://localhost:8082/api/feedback";
+  sendFeedback(): void {
+    const url = 'http://localhost:8082/api/feedback';
     this.http.post(url, this.model).subscribe(
       res => {
-        location.reload();
+        console.log('Question was send!');
+        window.location.pathname = '';
       },
       err => {
-        alert("Post error :(");
+        alert('Post error :(');
       }
     );
   }
@@ -35,7 +36,7 @@ export class FeedbackComponent implements OnInit {
 }
 
 export interface FeedbackViewModel {
-  name:string;
-  email:string;
-  feedback:string;
+  name: string;
+  email: string;
+  feedback: string;
 }
